@@ -22,9 +22,6 @@ jobs:
         env:
           PUPPETEER_SKIP_DOWNLOAD: false
 
-      - name: Install Chrome for Puppeteer
-        run: npx puppeteer browsers install chrome
-
       - name: Run capture script
         run: node scripts/capture.js
 
