@@ -18,7 +18,12 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install puppeteer
+        run: npm install
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: false
+
+      - name: Install Chrome for Puppeteer
+        run: npx puppeteer browsers install chrome
 
       - name: Run capture script
         run: node scripts/capture.js
